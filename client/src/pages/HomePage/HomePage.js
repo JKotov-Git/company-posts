@@ -4,8 +4,10 @@ import Navbar from "../../components/navbar/Navbar";
 
 const HomePage = () => {
   return (
-    <div>
-     <Navbar />
+    <div className="home">
+      <Navbar />
+      <div className="posts-list-container"></div>
+      <div className="post-list-paginate-container"></div>
     </div>
   );
 };

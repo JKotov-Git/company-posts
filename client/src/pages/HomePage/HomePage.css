@@ -1,0 +1,36 @@
+.home {
+  width: 100%;
+  min-height: 90%;
+}
+
+.posts-list-container {
+  padding: 20px;
+}
+
+.page-number-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-list-paginate-container {
+  display: flex;
+  justify-content: center;
+}
+
+.post-list-paginate-container ul {
+  display: flex;
+  list-style: none;
+  padding: 10px;
+}
+
+.post-list-paginate-container ul li {
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.paginate-list-item-active {
+  color: red;
+  text-decoration: underline;
+}
