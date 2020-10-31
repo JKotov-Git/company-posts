@@ -3,7 +3,7 @@ import React from 'react'
 const ReadPost = () => {
     return (
         <div>
-            <h1>Reade Post</h1>
+            <h1>Read Post</h1>
         </div>
     )
 }
