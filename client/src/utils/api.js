@@ -28,7 +28,9 @@ export const loginUser = async (url, userObject) => {
       `http://localhost:8000/${url}?username=${userObject.username}`
     );
     return response;
-  } catch (error) {}
+  } catch (error) {
+      console.log(error);
+  }
 };
 
 export const createPost = async (url, postObject) => {
