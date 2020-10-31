@@ -62,7 +62,7 @@ const LoginPage = () => {
         </form>
         {/* Link to create account page form */}
         <p>
-          <Link className="login-link" to="/createUser">
+          <Link className="login-link" to="/createAccount">
             Create new user account.
           </Link>
         </p>
