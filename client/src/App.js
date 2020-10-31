@@ -16,6 +16,7 @@ function App() {
             <ReadPost />
           </Route>
           <Route path="/createPost">
+            <Header />
             <CreatePost />
           </Route>
           <Route path="/createAccount">
