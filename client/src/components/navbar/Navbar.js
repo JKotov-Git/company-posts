@@ -3,7 +3,8 @@ import "./Navbar.css";
 
 import { Link } from "react-router-dom";
 const Navbar = (props) => {
-  return <div className="navbar">
+  return (
+  <div className="navbar">
       <ul className="navbar-list">
       <li
           data-testid="navbarPosts"
@@ -51,5 +52,8 @@ const Navbar = (props) => {
       </button>
        
       </div>
-  </div>;
+  </div>
+  );
 };
+
+export default Navbar;
