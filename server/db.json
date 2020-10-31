@@ -8,6 +8,15 @@
       "userId": 14,
       "username": "Aria",
       "createpostdate": "Oct 29, 2020"
+    },
+    {
+      "posttitle": "Motors",
+      "postsubtitle": "motor article",
+      "description": "Motors are .....",
+      "userId": 1,
+      "username": "Jassen",
+      "createpostdate": "Nov 1, 2020",
+      "id": 8
     }
   ],
   "users": [
