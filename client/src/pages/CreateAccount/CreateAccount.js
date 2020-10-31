@@ -1,19 +1,46 @@
 import React, { useState } from "react";
 import "./CreateAccount.css";
 
-import { Link } from "react-router-dom";
 import axios from "axios";
 
-const generateRandomId = () => {
-  let genId = Math.floor(Math.random() * 100);
-  return genId;
-};
+import { Link } from "react-router-dom";
+import { createUserAccount } from "../../utils/api";
 
 const CreateAccount = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
+
+  const createAccount = async () => {
+    const userObject = {
+      username: username,
+      email: email,
+      password: password,
+    };
+    try {
+      const response = await createUserAccount("users", userObject);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // const createAccount = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = createUserAccount("users", {
+  //       id: generateRandomId,
+  //       username: username,
+  //       email: email,
+  //       password: password,
+  //     });
+  //     console.log(response);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
   return (
     <div className="create-account">
       <div className="create-account-container">
@@ -44,9 +71,7 @@ const CreateAccount = () => {
             onChange={(e) => setRePassword(e.target.value)}
           />
 
-          <button type="button"
-        //    onClick={createAccount}
-           >
+          <button type="button" onClick={createAccount}>
             Create your account
           </button>
         </form>

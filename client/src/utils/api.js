@@ -4,15 +4,20 @@ export const getAllPosts = async (url) => {
   try {
     const response = await axios.get(`http://localhost:8000/${url}`);
 
-    return response.data;
+    return await response.data;
   } catch (error) {
     console.log(error);
   }
 };
 
-export const createUserAccount = async (url) => {
+export const createUserAccount = async (url, userObject) => {
+  const url1 = `http://localhost:8000/${url}/`;
+  console.log(url1);
   try {
-    const response = await axios.post(`http://localhost:8000/${url}`);
+    const response = await axios.post(
+      `http://localhost:8000/${url}/`,
+      userObject
+    );
     return response;
   } catch (error) {
     console.log(error);

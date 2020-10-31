@@ -10,5 +10,12 @@
       "createpostdate": "Oct 29, 2020"
     }
   ],
-  "users": [{}]
+  "users": [
+    {
+      "username": "Jassen",
+      "email": "jasse@gmail.com",
+      "password": "test123",
+      "id": 1
+    }
+  ]
 }
