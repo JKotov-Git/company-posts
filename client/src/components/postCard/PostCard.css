@@ -1,0 +1,35 @@
+.post-card {
+  padding: 10px;
+  width: 400px;
+  border-bottom: 1px solid lightgrey;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.post-card-author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.post-card-title {
+  margin-bottom: 3px;
+}
+
+.post-card-subtitle {
+  margin-bottom: 10px;
+  font-size: 15px;
+  /* font-weight: lighter !important; */
+  color: #555555;
+}
+
+.post-card-additional-time {
+  color: rgb(117, 117, 117);
+}
+
+.post-card-icon {
+  color: blue;
+}
