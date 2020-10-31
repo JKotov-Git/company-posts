@@ -4,7 +4,11 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
 
+import { useStateValue } from "../../context/StateProvider";
+
 const Header = () => {
+  const [{ user }] = useStateValue();
+
   return (
     <header className="header">
       <Link to="/">
@@ -16,7 +20,7 @@ const Header = () => {
       <div className="header-nav">
         <Link className="header-link" to="/login">
           <div className="header-option">
-            <h5>Hello</h5>
+            {user ? <h5>Hello, user.username</h5> : <h5>Hello, </h5>}
             <h5>Sign In</h5>
           </div>
         </Link>
