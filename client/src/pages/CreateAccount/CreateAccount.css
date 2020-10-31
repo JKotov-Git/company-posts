@@ -56,3 +56,8 @@
   margin-bottom: 20px;
   margin-top: 10px;
 }
+
+.wrong-message {
+  text-align: center;
+  color:red;
+}

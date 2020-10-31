@@ -16,6 +16,18 @@
       "email": "jasse@gmail.com",
       "password": "test123",
       "id": 1
+    },
+    {
+      "username": "Genio",
+      "email": "gen@mail.com",
+      "password": "yyyrrr",
+      "id": 2
+    },
+    {
+      "username": "Gencho",
+      "email": "gench@gmail.com",
+      "password": "yyyrrr",
+      "id": 3
     }
   ]
 }

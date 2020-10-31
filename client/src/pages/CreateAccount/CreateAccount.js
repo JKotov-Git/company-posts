@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "./CreateAccount.css";
 
-import axios from "axios";
-
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { createUserAccount } from "../../utils/api";
 
 const CreateAccount = () => {
@@ -11,6 +9,8 @@ const CreateAccount = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
+  const [wrongMessage, setWrongMessage] = useState("");
+  const history = useHistory();
 
   const createAccount = async () => {
     const userObject = {
@@ -18,28 +18,18 @@ const CreateAccount = () => {
       email: email,
       password: password,
     };
-    try {
-      const response = await createUserAccount("users", userObject);
-      console.log(response);
-    } catch (error) {
-      console.log(error);
+
+    if (password === rePassword) {
+      try {
+        await createUserAccount("users", userObject);
+        history.push("/login");
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      setWrongMessage("Passwords not match");
     }
   };
-
-  // const createAccount = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = createUserAccount("users", {
-  //       id: generateRandomId,
-  //       username: username,
-  //       email: email,
-  //       password: password,
-  //     });
-  //     console.log(response);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   return (
     <div className="create-account">
@@ -81,6 +71,7 @@ const CreateAccount = () => {
             Sign-In.
           </Link>
         </p>
+        <h4 className="wrong-message">{wrongMessage}</h4>
       </div>
     </div>
   );
