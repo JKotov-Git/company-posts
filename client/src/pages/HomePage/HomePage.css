@@ -34,3 +34,8 @@
   color: red;
   text-decoration: underline;
 }
+
+.no-posts-yet-message {
+  text-align:center;
+  color: gray;
+}
