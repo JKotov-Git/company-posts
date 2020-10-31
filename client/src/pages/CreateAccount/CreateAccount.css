@@ -1,0 +1,58 @@
+.create-account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+}
+
+.create-account-container {
+  width: 300px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.create-account h1 {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.create-account-form label {
+  margin-bottom: 5px;
+}
+
+.create-account-form input {
+    width: 93%;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    height: 25px;
+    background-color: white;
+    border:1px solid lightgray;
+    border-radius: 5px;
+    padding:3px;
+}
+.create-account-form input:focus {
+  border: 1px solid #ff6600;
+  box-shadow: 0 0 2px 2px #ff944d;
+}
+
+.create-account-form button {
+    width: 100%;
+    background-color: #f0c14b;
+    height:30px;
+    border: 1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: black;
+    margin: 0 !important;
+    border-radius:5px;
+}
+
+.create-account-container p {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
