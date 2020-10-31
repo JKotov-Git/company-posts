@@ -11,8 +11,6 @@ export const getAllPosts = async (url) => {
 };
 
 export const createUserAccount = async (url, userObject) => {
-  const url1 = `http://localhost:8000/${url}/`;
-  console.log(url1);
   try {
     const response = await axios.post(
       `http://localhost:8000/${url}/`,
@@ -25,10 +23,22 @@ export const createUserAccount = async (url, userObject) => {
 };
 
 export const loginUser = async (url, userObject) => {
-    try {
-        const response = await axios.get(`http://localhost:8000/${url}?username=${userObject.username}`);
-        return response;
-    } catch (error) {
-        
-    }
-}
+  try {
+    const response = await axios.get(
+      `http://localhost:8000/${url}?username=${userObject.username}`
+    );
+    return response;
+  } catch (error) {}
+};
+
+export const createPost = async (url, postObject) => {
+  try {
+    const response = await axios.post(
+      `http://localhost:8000/${url}`,
+      postObject
+    );
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
