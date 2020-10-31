@@ -21,9 +21,15 @@ const HomePage = () => {
     console.log("Sort by Post Title");
   };
 
-  const searchByPostTitle = () => {};
+  const searchByPostTitle = () => {
+    setIsSearchByPostTitle(true);
+    setIsSearchByUsername(false);
+  };
 
-  const searchByUsername = () => {};
+  const searchByUsername = () => {
+    setIsSearchByPostTitle(false);
+    setIsSearchByUsername(true);
+  };
 
   return (
     <div className="home">
