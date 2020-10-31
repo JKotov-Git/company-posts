@@ -6,15 +6,13 @@ import "./PostCard.css";
 import PersonIcon from "@material-ui/icons/Person";
 
 const PostCard = (props) => {
-
-let history = useHistory();
-
+  let history = useHistory();
 
 
-
-  const clickPost = () => {
-    // console.log(props);
-    history.push({pathname: "/postArticle", postDetails: props});
+  // read post on the new page
+  const openPost = () => {
+   
+    history.push({ pathname: "/readPost", postDetails: props });
   };
 
   return (
@@ -23,7 +21,7 @@ let history = useHistory();
         <PersonIcon className="post-card-icon" />
         <h3>{props.author}</h3>
       </div>
-      <div className="post-card-title" onClick={clickPost}>
+      <div className="post-card-title" onClick={openPost}>
         <h1>{props.title}</h1>
       </div>
       <div className="post-card-subtitle">{props.subTitle}</div>
