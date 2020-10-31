@@ -29,7 +29,7 @@ const Navbar = (props) => {
           <div className="navbar-search-option-by-post">
             <input
               className="search-option"
-              onChange={props.sortByPostTitle}
+              onChange={props.searchByPostTitle}
               type="checkbox"
               checked={props.checkedIndicIsSearchByPost}
             />

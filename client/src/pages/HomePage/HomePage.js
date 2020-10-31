@@ -34,6 +34,7 @@ const HomePage = () => {
   return (
     <div className="home">
       <Navbar onChange={searchHandleChange} sortByPostTitle={sortByPostTitle}
+      searchByPostTitle={searchByPostTitle} 
       searchByUserName={searchByUsername} 
       checkedIndicIsSearchByPost={isSearchByPostTitle} checkedIndicIsSearchByUsername={isSearchByUsername}/>
       <div className="posts-list-container"></div>
