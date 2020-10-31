@@ -23,3 +23,12 @@ export const createUserAccount = async (url, userObject) => {
     console.log(error);
   }
 };
+
+export const loginUser = async (url, userObject) => {
+    try {
+        const response = await axios.get(`http://localhost:8000/${url}?username=${userObject.username}`);
+        return response;
+    } catch (error) {
+        
+    }
+}

@@ -2,36 +2,45 @@ import React, { useState } from "react";
 import "./LoginPage.css";
 
 import { Link, useHistory } from "react-router-dom";
-import axios from "axios";
+
 import { useStateValue } from "../../context/StateProvider";
+
+import { loginUser } from "../../utils/api";
 
 const LoginPage = () => {
   const [username, setUserName] = useState("");
   const [userpassword, setUserPassword] = useState("");
+  const [wrongMessage, setWrongMessage] = useState("");
 
   const [state, dispatch] = useStateValue();
 
   let history = useHistory();
 
-  //   const signIn = () => {
-  //     const url = `http://localhost:8000/users?username=${username}`;
-  //     console.log(url);
-  //     axios
-  //       .get(`http://localhost:8000/users?username=${username}`)
-  //       .then((response) => {
-  //         if (response.data[0].userpassword === userpassword) {
-  //           console.log(response.data[0]);
-  //           dispatch({
-  //             type: "SIGNIN_USER",
-  //             userObject: response.data[0],
-  //           });
-  //           history.push("/");
-  //         } else {
-  //           console.log("User not found");
-  //         }
-  //       })
-  //       .catch((error) => console.log(error));
-  //   };
+  const signIn = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await loginUser("users", {
+        username: username,
+      });
+
+      if (response.data.length > 0) {
+        if (response.data[0].password === userpassword) {
+          dispatch({
+            type: "SIGNIN_USER",
+            userObject: response.data[0],
+          });
+
+          history.push("/");
+        } else {
+          setWrongMessage("Wrong username or password.");
+        }
+      } else {
+        setWrongMessage("Such a user doesn't exist. ");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="login">
@@ -53,10 +62,7 @@ const LoginPage = () => {
             }}
           />
 
-          <button
-            type="button"
-            //    onClick={signIn}
-          >
+          <button type="button" onClick={signIn}>
             Sign In
           </button>
         </form>
@@ -66,6 +72,8 @@ const LoginPage = () => {
             Create new user account.
           </Link>
         </p>
+
+        <h4 className="wrong-message">{wrongMessage}</h4>
       </div>
     </div>
   );
