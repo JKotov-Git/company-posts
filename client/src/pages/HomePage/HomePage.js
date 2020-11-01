@@ -8,13 +8,14 @@ import ReactPaginate from "react-paginate";
 
 import PostCard from "../../components/postCard/PostCard";
 import { getAllPosts } from "../../utils/api";
+import { sortListBysPostName } from "../../utils/helper";
 
 const HomePage = () => {
   const [postsList, setPostsList] = useState([]);
   const [filteredPostsList, setFilteredPostsList] = useState([]);
   const [startIndexPosts, setIndexPosts] = useState(0);
   const [searchInput, setSearchInput] = useState("");
-  const [isSearchByPostTitle, setIsSearchByPostTitle] = useState(false);
+  const [isSearchByPostTitle, setIsSearchByPostTitle] = useState(true);
 
   const [isSearchByUsername, setIsSearchByUsername] = useState(false);
 
@@ -32,11 +33,23 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    setFilteredPostsList(
-      postsList.filter((post) => {
-        return post.posttitle.toLowerCase().includes(searchInput.toLowerCase());
-      })
-    );
+    if (isSearchByPostTitle) {
+      setFilteredPostsList(
+        postsList.filter((post) => {
+          return post.posttitle
+            .toLowerCase()
+            .includes(searchInput.toLowerCase());
+        })
+      );
+    } else if (isSearchByUsername) {
+      setFilteredPostsList(
+        postsList.filter((post) => {
+          return post.username
+            .toLowerCase()
+            .includes(searchInput.toLowerCase());
+        })
+      );
+    }
   }, [searchInput, postsList]);
 
   // searched value from input
@@ -46,7 +59,7 @@ const HomePage = () => {
 
   // sort posts by post title
   const sortByPostTitle = () => {
-    console.log("Sort by Post Title");
+    setFilteredPostsList(sortListBysPostName(postsList));
   };
 
   // check box determine search property post title
@@ -101,7 +114,6 @@ const HomePage = () => {
           onPageChange={onPageChange}
         />
       </div>
-     
     </div>
   );
 };

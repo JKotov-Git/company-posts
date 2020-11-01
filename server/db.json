@@ -17,6 +17,15 @@
       "username": "Jassen",
       "createpostdate": "Nov 1, 2020",
       "id": 8
+    },
+    {
+      "posttitle": "Bus",
+      "postsubtitle": "some bus",
+      "description": "A bus (contracted from omnibus,[1] with variants multibus, motorbus, autobus, etc.) is a road vehicle designed to carry many passengers. Buses can have a capacity as high as 300 passengers.[2] The most common type is the single-deck rigid bus, with larger loads carried by double-decker and articulated buses, and smaller loads carried by midibuses and minibuses while coaches are used for longer-distance services. Many types of buses, such as city transit buses and...",
+      "userId": 1,
+      "username": "Jassen",
+      "createpostdate": "Nov 1, 2020",
+      "id": 9
     }
   ],
   "users": [
