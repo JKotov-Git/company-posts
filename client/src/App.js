@@ -16,7 +16,7 @@ function App() {
           <Route path="/readPost">
           <Header />
             <ReadPost />
-          
+            <Footer />
           </Route>
           <Route path="/createPost">
             <Header />
