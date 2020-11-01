@@ -13,6 +13,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/readPost">
+          <Header />
             <ReadPost />
           </Route>
           <Route path="/createPost">
