@@ -27,9 +27,17 @@
   margin-top: 5px;
   height: 25px;
   background-color: white;
-  border:1px solid lightgray;
+
   border-radius: 5px;
-  padding:3px;
+  padding: 3px;
+}
+.border-color-red {
+  border: 1px solid red;
+  box-shadow: 0 0 2px 2px #ff4d4d;
+}
+
+.border-color-lightgray {
+  border: 1px solid lightgray;
 }
 
 .post-title input:focus {
@@ -53,7 +61,7 @@
 }
 
 .post-subtitle input {
-  width:50%;
+  width: 50%;
   margin-bottom: 10px;
   margin-top: 5px;
   height: 25px;
@@ -96,11 +104,15 @@
 
 .post-form button {
   background-color: #f0c14b;
-  height:30px;
+  height: 30px;
   border: 1px solid;
   border-color: #a88734 #9c7e31 #846a29;
   color: black;
   margin: 0 !important;
-  border-radius:5px;
+  border-radius: 5px;
   cursor: pointer;
+}
+
+.border-red {
+  border: 1px solid red;
 }

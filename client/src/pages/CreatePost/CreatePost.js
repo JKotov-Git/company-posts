@@ -17,6 +17,7 @@ const CreatePost = () => {
   const [postTitle, setPostTitle] = useState("");
   const [postSubTitle, setPostSubTitle] = useState("");
   const [postContent, setPostContent] = useState("");
+  const [isWrong, setIsWrong] = useState(false);
 
   // get text from input title
   const postTitleValue = (e) => {
@@ -46,10 +47,15 @@ const CreatePost = () => {
       createpostdate: generateDate(),
     };
     console.log(postObject);
-    try {
-      await createPost("posts", postObject);
-    } catch (error) {
-      console.log(error);
+
+    if (postTitle === "") {
+      setIsWrong(true);
+    } else {
+      try {
+        await createPost("posts", postObject);
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -61,7 +67,10 @@ const CreatePost = () => {
             <label>Title</label>
             <input
               type="text"
-              className="post-title-input"
+              className={
+                "post-title-input " +
+                (isWrong ? "border-color-red" : "border-color-lightgray")
+              }
               onChange={postTitleValue}
             />
           </div>
