@@ -95,9 +95,12 @@
 }
 
 .post-form button {
-  margin: 0;
   background-color: #f0c14b;
+  height:30px;
   border: 1px solid;
   border-color: #a88734 #9c7e31 #846a29;
   color: black;
+  margin: 0 !important;
+  border-radius:5px;
+  cursor: pointer;
 }
