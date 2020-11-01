@@ -14,7 +14,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/readPost">
-          <Header />
+            <Header />
             <ReadPost />
             <Footer />
           </Route>
@@ -35,7 +35,6 @@ function App() {
             <Footer />
           </Route>
         </Switch>
-        
       </div>
     </Router>
   );
