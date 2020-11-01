@@ -12,7 +12,7 @@ const LoginPage = () => {
   const [userpassword, setUserPassword] = useState("");
   const [wrongMessage, setWrongMessage] = useState("");
 
-  const [state, dispatch] = useStateValue();
+  const [dispatch] = useStateValue();
 
   let history = useHistory();
 
