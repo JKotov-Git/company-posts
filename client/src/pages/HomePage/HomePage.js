@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./HomePage.css";
 import Navbar from "../../components/navbar/Navbar";
+import Footer from "../../components/footer/Footer";
 import { useStateValue } from "../../context/StateProvider";
 
 import ReactPaginate from "react-paginate";
@@ -100,6 +101,7 @@ const HomePage = () => {
           onPageChange={onPageChange}
         />
       </div>
+     
     </div>
   );
 };

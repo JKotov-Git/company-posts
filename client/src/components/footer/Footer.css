@@ -1,0 +1,17 @@
+.footer-container {
+  width: 100%;
+  box-sizing: border-box;
+  height: 80px;
+  display: flex;
+  background-color: #131921;
+  color: white;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  margin-top:10px;
+}
+.footer-links ul {
+  list-style: none;
+  line-height: 1.5;
+}

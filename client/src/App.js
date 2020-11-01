@@ -6,6 +6,7 @@ import CreateAccount from "../src/pages/CreateAccount/CreateAccount";
 import CreatePost from "../src/pages/CreatePost/CreatePost";
 import ReadPost from "../src/pages/ReadPost/ReadPost";
 import Header from "../src/components/header/Header";
+import Footer from "../src/components/footer/Footer";
 
 function App() {
   return (
@@ -15,10 +16,12 @@ function App() {
           <Route path="/readPost">
           <Header />
             <ReadPost />
+          
           </Route>
           <Route path="/createPost">
             <Header />
             <CreatePost />
+            <Footer />
           </Route>
           <Route path="/createAccount">
             <CreateAccount />
@@ -29,8 +32,10 @@ function App() {
           <Route path="/">
             <Header />
             <HomePage />
+            <Footer />
           </Route>
         </Switch>
+        
       </div>
     </Router>
   );
