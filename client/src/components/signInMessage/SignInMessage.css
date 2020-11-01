@@ -1,3 +1,27 @@
+.message-container {
+  width: 500px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.message-container-options {
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  padding:10px;
+  margin:auto;
+  align-items: center;
+}
+
+.message-container-options button {
+  margin-bottom: 5px;
+  width:200px;
+}
+
 .message {
   color: red;
+  font-size: 20px;
 }
