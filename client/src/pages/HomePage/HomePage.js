@@ -22,7 +22,7 @@ const HomePage = () => {
   useEffect(async () => {
     try {
       const response = await getAllPosts("posts");
-      console.log(response);
+      
       setPostsList(response);
       setNumberOfPages(Math.ceil(response.length / 6));
     } catch (error) {
