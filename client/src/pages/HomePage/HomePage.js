@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./HomePage.css";
 import Navbar from "../../components/navbar/Navbar";
-import Footer from "../../components/footer/Footer";
-import { useStateValue } from "../../context/StateProvider";
 
 import ReactPaginate from "react-paginate";
 
@@ -35,11 +33,13 @@ const HomePage = () => {
   useEffect(() => {
     if (isSearchByPostTitle) {
       setFilteredPostsList(
-        postsList.filter((post) => {
-          return post.posttitle
-            .toLowerCase()
-            .includes(searchInput.toLowerCase());
-        })
+        postsList
+          .filter((post) => {
+            return post.posttitle
+              .toLowerCase()
+              .includes(searchInput.toLowerCase());
+          })
+          .slice(startIndexPosts, startIndexPosts + 6)
       );
     } else if (isSearchByUsername) {
       setFilteredPostsList(
@@ -74,9 +74,12 @@ const HomePage = () => {
     setIsSearchByUsername(true);
   };
 
+  // change page content
   const onPageChange = (e) => {
     let selectedPage = e.selected;
-    console.log("Page is changed to " + selectedPage);
+    let nextIndex = selectedPage * 6;
+    const nextPosts = postsList.slice(nextIndex, nextIndex + 6);
+    setFilteredPostsList(nextPosts);
   };
 
   return (
