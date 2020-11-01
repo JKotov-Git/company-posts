@@ -23,6 +23,13 @@
 
 .post-title input {
   width: 50%;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  height: 25px;
+  background-color: white;
+  border:1px solid lightgray;
+  border-radius: 5px;
+  padding:3px;
 }
 
 .post-title input:focus {
@@ -46,7 +53,14 @@
 }
 
 .post-subtitle input {
-  width: 50%;
+  width:50%;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  height: 25px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 3px;
 }
 .post-subtitle input:focus {
   border: 1px solid #ff6600;
@@ -68,6 +82,7 @@
   width: 98%;
   margin-top: 10px;
   height: 400px;
+  max-height: 500px;
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 5px;
