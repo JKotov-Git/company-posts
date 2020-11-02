@@ -17,8 +17,6 @@ afterEach(cleanup);
 
 describe("render react component ", () => {
   it("render header title", () => {
-    
-
     const wrapper = mount(
       <StateProvider initialState={initialState} reducer={reducer}>
         <App>
@@ -54,5 +52,21 @@ describe("render react component ", () => {
         ""
       );
     });
+  });
+
+  it("render navbar sort button", () => {
+    const wrapper = shallow(<Navbar sortByPostTitle={() => {}} />);
+
+    expect(wrapper.find('[data-testid="btnSortByTitle"]').text()).toEqual(
+      "Sort By post"
+    );
+  });
+
+  it("click sort by post button", () => {
+    const mockCallBack = jest.fn();
+    const wrapper = shallow(<Navbar sortByPostTitle={mockCallBack} />);
+
+    wrapper.find('[data-testid="btnSortByTitle"]').simulate("click");
+    expect(mockCallBack.mock.calls.length).toEqual(1);
   });
 });
