@@ -14,7 +14,7 @@ const Navbar = (props) => {
           Posts
         </li>
         <Link to="/createPost" className="navbar-list-item-link">
-          <li className="navbar-list-item">Add new post</li>
+          <li data-testid="navbaNewPost" className="navbar-list-item">Add new post</li>
         </Link>
       </ul>
       <div className="navbar-search">
@@ -23,6 +23,7 @@ const Navbar = (props) => {
           className="navbar-search-box"
           placeholder="Search..."
           onChange={props.onChange}
+          data-testid="searchInputField"
         />
         <div className="navbar-search-options">
           <h5 className="navbar-search-option-title">Search by:</h5>
