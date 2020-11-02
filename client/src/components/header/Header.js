@@ -9,7 +9,7 @@ import { useStateValue } from "../../context/StateProvider";
 const Header = () => {
   const [{ user }] = useStateValue();
 
-  console.log(user);
+
   return (
     <header className="header">
       <Link to="/">

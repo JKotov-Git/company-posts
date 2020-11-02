@@ -17,6 +17,8 @@ const CreatePost = () => {
   const [postTitle, setPostTitle] = useState("");
   const [postSubTitle, setPostSubTitle] = useState("");
   const [postContent, setPostContent] = useState("");
+  const [isWrongBorderColor, setIsWrongBorderColor] = useState(false);
+  const [showWrongMessage, setShowWrongMessage] = useState(false);
 
   // get text from input title
   const postTitleValue = (e) => {
@@ -46,10 +48,21 @@ const CreatePost = () => {
       createpostdate: generateDate(),
     };
     console.log(postObject);
-    try {
-      await createPost("posts", postObject);
-    } catch (error) {
-      console.log(error);
+
+    if (postTitle === "") {
+      setIsWrongBorderColor(true);
+      setShowWrongMessage(true);
+    } else if (postContent === "") {
+      setIsWrongBorderColor(true);
+      setShowWrongMessage(true);
+    } else {
+      setIsWrongBorderColor(false);
+      setShowWrongMessage(false);
+      try {
+        await createPost("posts", postObject);
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -61,9 +74,17 @@ const CreatePost = () => {
             <label>Title</label>
             <input
               type="text"
-              className="post-title-input"
+              className={
+                "post-title-input " +
+                (isWrongBorderColor
+                  ? "border-color-red"
+                  : "border-color-lightgray")
+              }
               onChange={postTitleValue}
             />
+            {showWrongMessage ? (
+              <p className="error-info-input">Post title can not be empty.</p>
+            ) : null}
           </div>
           <div className="post-subtitle">
             <label>Subtitle</label>
@@ -77,9 +98,17 @@ const CreatePost = () => {
             <label>Content</label>
             <textarea
               type="text"
-              className="post-form-textarea"
+              className={
+                "post-form-textarea " +
+                (isWrongBorderColor
+                  ? "border-color-red"
+                  : "border-color-lightgray")
+              }
               onChange={postContentValue}
             />
+            {showWrongMessage ? (
+              <p className="error-info-input">Post content can not be empty.</p>
+            ) : null}
           </div>
 
           <button type="button" onClick={submitPost}>

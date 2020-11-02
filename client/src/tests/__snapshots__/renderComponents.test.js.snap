@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="header"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root header-home-icon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"
+        />
+      </svg>
+    </a>
+    <div
+      className="header-title"
+    >
+      <h2
+        data-testid="headerTitle"
+      >
+        Company Posts
+      </h2>
+    </div>
+    <div
+      className="header-nav"
+    >
+      <a
+        className="header-link"
+        href="/login"
+        onClick={[Function]}
+      >
+        <div
+          className="header-option"
+        >
+          <h5>
+            Hello, 
+          </h5>
+          <h5>
+            Sign In
+          </h5>
+        </div>
+      </a>
+    </div>
+  </header>
+  <div
+    className="home"
+  >
+    <div
+      className="navbar"
+    >
+      <ul
+        className="navbar-list"
+      >
+        <li
+          className="navbar-list-item"
+          data-testid="navbarPosts"
+        >
+          Posts
+        </li>
+        <a
+          className="navbar-list-item-link"
+          href="/createPost"
+          onClick={[Function]}
+        >
+          <li
+            className="navbar-list-item"
+            data-testid="navbaNewPost"
+          >
+            Add new post
+          </li>
+        </a>
+      </ul>
+      <div
+        className="navbar-search"
+      >
+        <input
+          className="navbar-search-box"
+          data-testid="searchInputField"
+          onChange={[Function]}
+          placeholder="Search..."
+          type="text"
+        />
+        <div
+          className="navbar-search-options"
+        >
+          <h5
+            className="navbar-search-option-title"
+          >
+            Search by:
+          </h5>
+          <div
+            className="navbar-search-option-by-post"
+          >
+            <input
+              checked={true}
+              className="search-option"
+              data-testid="searchByPostTitleCheckbox"
+              onChange={[Function]}
+              type="checkbox"
+            />
+            <label>
+              post name
+            </label>
+          </div>
+          <div
+            className="navbar-search-option-by-user"
+          >
+            <input
+              checked={false}
+              className="search-option"
+              data-testid="searchByUsernameCheckbox"
+              onChange={[Function]}
+              type="checkbox"
+            />
+            <label>
+              user name
+            </label>
+          </div>
+        </div>
+        <button
+          data-testid="btnSortByTitle"
+          onClick={[Function]}
+          type="button"
+        >
+          Sort By post
+        </button>
+      </div>
+    </div>
+    <div
+      className="posts-list-container"
+    >
+      <h4
+        className="no-posts-yet-message"
+      >
+        No Posts Yet.
+      </h4>
+    </div>
+    <div
+      className="post-list-paginate-container"
+    >
+      <ul>
+        <li
+          className="previous disabled"
+        >
+          <a
+            aria-disabled="true"
+            aria-label="Previous page"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            Previous
+          </a>
+        </li>
+        <li
+          className="next"
+        >
+          <a
+            aria-disabled="false"
+            aria-label="Next page"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            Next
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    className="footer-container"
+  >
+    <div
+      className="footer-company"
+    >
+      <h2>
+        Company Posts
+      </h2>
+    </div>
+    <div
+      className="footer-copyright"
+    >
+      <h4>
+        Copyright
+      </h4>
+    </div>
+    <div
+      className="footer-links"
+    >
+      <ul>
+        <li>
+          Posts
+        </li>
+        <li>
+          Users
+        </li>
+        <li>
+          Sign In
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
