@@ -7,26 +7,25 @@
 }
 
 .message-container-options {
-  width:100%;
-  display:flex;
+  width: 100%;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  padding:10px;
-  margin:auto;
+  padding: 10px;
+  margin: auto;
   align-items: center;
 }
 
 .message-container-options button {
   margin-bottom: 5px;
-  width:200px;
-  font-size: 20px;
-  padding: 5px;
-  font-weight: 400;
-  background-color: #131921;
-  color: white;
-  border: 1px solid lightgray;
-  height: 35px;
+  width: 200px;
+  background-color: #f0c14b;
+  height: 30px;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: black;
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .message {
