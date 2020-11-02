@@ -22,7 +22,7 @@ const HomePage = () => {
   useEffect(async () => {
     try {
       const response = await getAllPosts("posts");
-      
+
       setPostsList(response);
       setNumberOfPages(Math.ceil(response.length / 6));
     } catch (error) {
@@ -31,25 +31,27 @@ const HomePage = () => {
   }, []);
 
   useEffect(() => {
-    if (isSearchByPostTitle) {
-      setFilteredPostsList(
-        postsList
-          .filter((post) => {
-            return post.posttitle
+    
+      if (isSearchByPostTitle) {
+        setFilteredPostsList(
+          postsList
+            .filter((post) => {
+              return post.posttitle
+                .toLowerCase()
+                .includes(searchInput.toLowerCase());
+            })
+            .slice(startIndexPosts, startIndexPosts + 6)
+        );
+      } else if (isSearchByUsername) {
+        setFilteredPostsList(
+          postsList.filter((post) => {
+            return post.username
               .toLowerCase()
               .includes(searchInput.toLowerCase());
           })
-          .slice(startIndexPosts, startIndexPosts + 6)
-      );
-    } else if (isSearchByUsername) {
-      setFilteredPostsList(
-        postsList.filter((post) => {
-          return post.username
-            .toLowerCase()
-            .includes(searchInput.toLowerCase());
-        })
-      );
-    }
+        );
+      }
+    
   }, [searchInput, postsList]);
 
   // searched value from input
