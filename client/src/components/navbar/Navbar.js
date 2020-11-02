@@ -14,7 +14,9 @@ const Navbar = (props) => {
           Posts
         </li>
         <Link to="/createPost" className="navbar-list-item-link">
-          <li data-testid="navbaNewPost" className="navbar-list-item">Add new post</li>
+          <li data-testid="navbaNewPost" className="navbar-list-item">
+            Add new post
+          </li>
         </Link>
       </ul>
       <div className="navbar-search">
@@ -29,6 +31,7 @@ const Navbar = (props) => {
           <h5 className="navbar-search-option-title">Search by:</h5>
           <div className="navbar-search-option-by-post">
             <input
+              data-testid="searchByPostTitleCheckbox"
               className="search-option"
               onChange={props.searchByPostTitle}
               type="checkbox"
@@ -38,6 +41,7 @@ const Navbar = (props) => {
           </div>
           <div className="navbar-search-option-by-user">
             <input
+              data-testid="searchByUsernameCheckbox"
               className="search-option"
               onChange={props.searchByUserName}
               type="checkbox"

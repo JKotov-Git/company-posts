@@ -1,8 +1,14 @@
 import React from "react";
 import App from "../App";
+// components
 import Header from "../components/header/Header";
-import HomePage from "../pages/HomePage/HomePage";
 import Navbar from "../components/navbar/Navbar";
+
+// pages
+import HomePage from "../pages/HomePage/HomePage";
+import LoginPage from "../pages/LoginPage/LoginPage";
+import CreateAccount from "../pages/CreateAccount/CreateAccount";
+
 import { configure, shallow, mount } from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 
@@ -68,5 +74,27 @@ describe("render react component ", () => {
 
     wrapper.find('[data-testid="btnSortByTitle"]').simulate("click");
     expect(mockCallBack.mock.calls.length).toEqual(1);
+  });
+
+  it("navbar checkbox search by post name have to be checked", () => {
+    const wrapper = mount(<Navbar />);
+
+    wrapper.setProps({ checkedIndicIsSearchByPos: true });
+    let checkbox = wrapper.find("[data-testid]=searchByPostTitleCheckbox");
+    expect(checkbox.props.checked).toEqual(true);
+  });
+
+  it("render login page", () => {
+    const wrapper = mount(
+      <StateProvider initialState={initialState} reducer={reducer}>
+        <App>
+          <LoginPage />
+        </App>
+      </StateProvider>
+    );
+
+    const loginForm = <div className="login"></div>;
+
+    expect(wrapper.contains(loginForm)).toEqual(true);
   });
 });
