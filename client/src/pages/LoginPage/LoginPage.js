@@ -16,30 +16,52 @@ const LoginPage = () => {
 
   let history = useHistory();
 
-  const signIn = async (e) => {
+  const signIn = (e) => {
     e.preventDefault();
-    try {
-      const response = await loginUser("users", {
-        username: username,
+
+    loginUser("get", `users?username=${username}`)
+      .then((response) => {
+        if (response.data.length > 0) {
+          if (response.data[0].password === userpassword) {
+            dispatch({
+              type: "SIGNIN_USER",
+              userObject: response.data[0],
+            });
+            history.push("/");
+          } else {
+            setWrongMessage("Wrong username or password.");
+          }
+        } else {
+          setWrongMessage("Such a user doesn't exist.");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        setWrongMessage("No access to the server");
       });
 
-      if (response.data.length > 0) {
-        if (response.data[0].password === userpassword) {
-          dispatch({
-            type: "SIGNIN_USER",
-            userObject: response.data[0],
-          });
+    // try {
+    //   const response = await loginUser("users", {
+    //     username: username,
+    //   });
 
-          history.push("/");
-        } else {
-          setWrongMessage("Wrong username or password.");
-        }
-      } else {
-        setWrongMessage("Such a user doesn't exist. ");
-      }
-    } catch (error) {
-      console.log(error);
-    }
+    //   if (response.data.length > 0) {
+    //     if (response.data[0].password === userpassword) {
+    //       dispatch({
+    //         type: "SIGNIN_USER",
+    //         userObject: response.data[0],
+    //       });
+
+    //
+    //     } else {
+    //       setWrongMessage("Wrong username or password.");
+    //     }
+    //   } else {
+    //     setWrongMessage("Such a user doesn't exist. ");
+    //   }
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
 
   return (
