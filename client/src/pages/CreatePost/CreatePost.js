@@ -20,23 +20,6 @@ const CreatePost = () => {
   const [isWrongBorderColor, setIsWrongBorderColor] = useState(false);
   const [showWrongMessage, setShowWrongMessage] = useState(false);
 
-  // get text from input title
-  const postTitleValue = (e) => {
-    const title = e.target.value;
-    setPostTitle(title);
-  };
-  // get text from input subtitle
-  const postSubTitleValue = (e) => {
-    const subTitle = e.target.value;
-    setPostSubTitle(subTitle);
-  };
-
-  // get text from textarea
-
-  const postContentValue = (e) => {
-    const content = e.target.value;
-    setPostContent(content);
-  };
 
   const submitPost = async () => {
     const postObject = {
@@ -80,7 +63,9 @@ const CreatePost = () => {
                   ? "border-color-red"
                   : "border-color-lightgray")
               }
-              onChange={postTitleValue}
+              onChange={(e) => {
+                setPostTitle(e.target.value);
+              }}
             />
             {showWrongMessage ? (
               <p className="error-info-input">Post title can not be empty.</p>
@@ -91,7 +76,9 @@ const CreatePost = () => {
             <input
               type="text"
               className="post-subtitle-input"
-              onChange={postSubTitleValue}
+              onChange={(e) => {
+                setPostSubTitle(e.target.value);
+              }}
             />
           </div>
           <div className="post-content">
@@ -104,7 +91,9 @@ const CreatePost = () => {
                   ? "border-color-red"
                   : "border-color-lightgray")
               }
-              onChange={postContentValue}
+              onChange={(e) => {
+                setPostContent(e.target.value);
+              }}
             />
             {showWrongMessage ? (
               <p className="error-info-input">Post content can not be empty.</p>
