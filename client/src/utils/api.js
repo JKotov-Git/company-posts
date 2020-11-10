@@ -7,7 +7,6 @@ const fetchData = (method, url, data) => {
     data: data,
   })
     .then((response) => {
-      console.log(response);
       return response;
     })
     .catch((error) => {

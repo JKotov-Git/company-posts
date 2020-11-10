@@ -9,7 +9,6 @@ import { useStateValue } from "../../context/StateProvider";
 const Header = () => {
   const [{ user }] = useStateValue();
 
-
   return (
     <header className="header">
       <Link to="/">
@@ -21,8 +20,8 @@ const Header = () => {
       <div className="header-nav">
         <Link className="header-link" to="/login">
           <div className="header-option">
-            {user ? <h5>Hello, {user.username}</h5> : <h5>Hello, </h5>}
-            <h5>Sign In</h5>
+            <h5>{user ? "Hello, " + user.username : "Hello"}</h5>
+            <h5>{user ? "" : "Sign In"}</h5>
           </div>
         </Link>
       </div>
