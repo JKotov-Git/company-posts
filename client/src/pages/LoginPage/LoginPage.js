@@ -36,32 +36,8 @@ const LoginPage = () => {
         }
       })
       .catch((error) => {
-        console.log(error);
         setWrongMessage("No access to the server");
       });
-
-    // try {
-    //   const response = await loginUser("users", {
-    //     username: username,
-    //   });
-
-    //   if (response.data.length > 0) {
-    //     if (response.data[0].password === userpassword) {
-    //       dispatch({
-    //         type: "SIGNIN_USER",
-    //         userObject: response.data[0],
-    //       });
-
-    //
-    //     } else {
-    //       setWrongMessage("Wrong username or password.");
-    //     }
-    //   } else {
-    //     setWrongMessage("Such a user doesn't exist. ");
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    // }
   };
 
   return (
