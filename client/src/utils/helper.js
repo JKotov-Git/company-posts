@@ -12,3 +12,11 @@ export const sortListBysPostName = (array) => {
   });
   return array;
 };
+
+export const gnerateDate = () => {
+  let currentDate = new Date();
+  let month = currentDate.toLocaleString("default", { month: "short" });
+  let date = currentDate.getDate();
+  let year = currentDate.getFullYear();
+  return `${month} ${date}, ${year}`;
+}

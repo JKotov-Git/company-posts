@@ -3,14 +3,9 @@ import "./CreatePost.css";
 import { useStateValue } from "../../context/StateProvider";
 import { createPost } from "../../utils/api";
 import SignInMessage from "../../components/signInMessage/SignInMessage";
+import { gnerateDate } from "../../utils/helper";
 
-function generateDate() {
-  let currentDate = new Date();
-  let month = currentDate.toLocaleString("default", { month: "short" });
-  let date = currentDate.getDate();
-  let year = currentDate.getFullYear();
-  return `${month} ${date}, ${year}`;
-}
+
 
 const CreatePost = () => {
   const [{ user }] = useStateValue();
@@ -28,17 +23,14 @@ const CreatePost = () => {
       description: postContent,
       userId: user.id,
       username: user.username,
-      createpostdate: generateDate(),
+      createpostdate: gnerateDate(),
     };
-    console.log(postObject);
 
-    if (postTitle === "") {
+
+    if (postTitle === "" || postContent === "") {
       setIsWrongBorderColor(true);
       setShowWrongMessage(true);
-    } else if (postContent === "") {
-      setIsWrongBorderColor(true);
-      setShowWrongMessage(true);
-    } else {
+    }  else {
       setIsWrongBorderColor(false);
       setShowWrongMessage(false);
       try {
